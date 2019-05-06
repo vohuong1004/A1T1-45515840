@@ -1,0 +1,74 @@
+Question 1:
+- Step 1: Save twain.txt from ilearn into Downloads
+- Step 2 : Use scp to upload file twain.txt into my AWS account:
+scp -i 45515840.pem twain.txt ubuntu@ec2-52-63-147-126.ap-southeast-2.compute.amazonaws.com:
+- Step 3: Convert all instances of the string ‘Huck’ to ‘HucK’:
+* Use command: sed 's/Huck/HucK/g' twain.txt
+* Check the number of the string ‘Huck’ in result file = 0:
+     Use: sed 's/Huck/HucK/g' twain.txt>test.txt
+          grep -c 'Huck' test.txt
+          
+Question 2:
+- Step 1: Use IDLE editor to create and edit the program . To start editing a program, go to the menu item File→New Window
+then enter the code of question into the editor window and save it as userargument.py into Downloads.
+- Step 2: Execute userargument.py with the command line:
+a) python userargument.py python
+Result: Hi, python. How are you?
+b) python userargument.py @!&^%
+Result: -bash: !: event not found
+c) python userargument.py 1234
+ Result: Hi, 1234. How are you?
+d) python userargument.py Bob
+Result: Hi, Bob. How are you?
+e) userargument.py Bob
+Result: -bash: userargument.py: command not found
+f) python userargument.py Alice Bob
+Result: Hi, Alice. How are you?
+
+Question 3:
+We have every year that is exactly divisible by four is a leap year, except for years that are exactly divisible by 100, 
+but these centurial years are leap years if they are exactly divisible by 400.
+- Step 1: Use IDLE editor to create and edit the program. To start editing a program, go to the menu item File→New Window. 
+Then type in IDLE the python code to check if the input year is a leap year or not into the editor window and save it as 
+Gregorianleapyear.py into Downloads.
+* The python code in IDLE:
+year=int(input("Enter a year: "))
+if (year % 4)==0:
+    if (year % 100)==0:
+        if (year % 400)==0:
+            print("%d is a leap year." %(year))
+        else:
+            print("%d is not a leap year." %(year))
+    else:
+        print("%d is a leap year." %(year))
+else:
+    print("%d is not a leap year." %(year))
+- Step 2: Checking with the year 2020
+
+Question 4:
+-  Step 1 : Composing in IDLE the python program that takes two integers a and b from the command line and writes a random 
+integer between a and b into the editor window and save it as rd.py into Downloads.
+* Typing in IDLE:
+import random
+a=int(input("Enter a="))
+b=int(input("Enter b="))
+if a<b:
+    print("The random integer between %d and %d is %d" %(a,b,random.randint(a,b)))
+else:
+    print("The random integer between %d and %d is %d" %(b,a,random.randint(b,a)))
+- Step 2: Checking with a=9 and b=6; a=5 and b=7
+
+Question 6:
+-  Step 1 : Composing in IDLE the python program that calculates and writes the amount of money you would have if you invested 
+it at a given interest rate (compounded continuously), taking the number of years t, the principal P, and the annual interest 
+rate r as command-line arguments. The desired value is given by the formula Pert. Then saving it as invest.py into Downloads
+* Typing in IDLE:
+print ("[Calculate the desired value]")
+import math
+rate=float(input("Interest rate compounded continuously r= "))
+years=int(input("The number of years t= "))
+principal=float(input("The principal P= "))
+value=principal*math.e**(rate*years)
+print ("After %d years, the desired value will be $%.2f" %(years, value))
+-   Step 2: Checking with r=0.25, t=10, P=1000. The result is: 12182.49
+
