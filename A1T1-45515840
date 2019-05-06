@@ -58,6 +58,33 @@ else:
     print("The random integer between %d and %d is %d" %(b,a,random.randint(b,a)))
 - Step 2: Checking with a=9 and b=6; a=5 and b=7
 
+Question 5:
+-  Step 1: Composing in IDLE the python program that takes two integers m and d from the command line and writes True if 
+day d of month m is between March 20 and June 20, and False otherwise.  Then saving it as month.py into Downloads
+* Typing in IDLE:
+month_list=("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+m=int(input("Enter an integer for month m = "))
+d=int(input("Enter an integer for day d = "))
+if (m==3 and d>=20 and d<=31) or (m==6 and d>=1 and d<=20) or (m==4 and d>=1 and d<=30) or (m==5 and d>=1):
+    print ("True")
+    print ("The date is " + month_list[m-1] +" %d." %(d))
+elif (m<1 or m>12):
+    print ("False")
+    print ("%d is an invalid month input." %(m))
+elif m==2 and (d<1 or d>29):
+    print ("False")
+    print ("%d is an invalid day of " %(d) + month_list[m-1] +".")
+elif (m==1 or m==3 or m==5 or m==7 or m==8 or m==10 or m==12) and (d<1 or d>31):
+    print ("False")
+    print ("%d is an invalid day of " %(d) + month_list[m-1] +".")
+elif (m==4 or m==6 or m==9 or m==11) and (d<1 or d>30):
+    print ("False")
+    print ("%d is an invalid day of " %(d) + month_list[m-1] +".")
+else:
+    print ("False")
+    print ("The date is " + month_list[m-1] +" %d. It is out of the required time range." %(d))
+- Step 2: Checking
+
 Question 6:
 -  Step 1 : Composing in IDLE the python program that calculates and writes the amount of money you would have if you invested 
 it at a given interest rate (compounded continuously), taking the number of years t, the principal P, and the annual interest 
